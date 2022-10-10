@@ -31,7 +31,7 @@ class Exp(nn.Module):
         return self.train_with_early_stopping(data.to(self.device), self.train_iters, self.patience)
 
     def train_with_early_stopping(self, data, train_iters, patience):
-        if 'BernNet' in self.net or 'GPRGNN' in self.net or self.net == "EvenNet":
+        if self.net == "BernNet" or self.net == "GPRGNN" or self.net == "EvenNet":
             optimizer = torch.optim.Adam(
                 [{'params': self.model.lin1.parameters(), 'weight_decay': self.weight_decay, 'lr': self.lr},
                  {'params': self.model.lin2.parameters(), 'weight_decay': self.weight_decay, 'lr': self.lr},

@@ -158,22 +158,15 @@ class Even_prop(MessagePassing):
 
 
 class GPR_prop_reg(MessagePassing):
-    def __init__(self, K, alpha, Init, Gamma=None, bias=True, **kwargs):
+    def __init__(self, K, alpha, Init, **kwargs):
         super(GPR_prop_reg, self).__init__(aggr='add', **kwargs)
         self.K = int(K)
         self.Init = Init
         self.alpha = alpha
 
         assert Init in ['SGC', 'PPR']
-        if Init == 'SGC':
-            # SGC-like
-            TEMP = 0.0 * np.ones(K + 1)
-            TEMP[-1] = 1.0
-        elif Init == 'PPR':
-            # PPR-like
-            TEMP = alpha * (1 - alpha) ** np.arange(K + 1)
-            TEMP[-1] = (1 - alpha) ** K
-
+        TEMP = alpha * (1 - alpha) ** np.arange(K + 1)
+        TEMP[-1] = (1 - alpha) ** K
         self.temp = Parameter(torch.tensor(TEMP))
 
     def reset_parameters(self):

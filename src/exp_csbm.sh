@@ -1,6 +1,5 @@
 p=0.50
 phi=50
-device=0
 
 # Generate cSBM datasets, we have provided generated datasets already.
 # python cSBM_dataset.py --train_nodes 3000 --val_nodes 3000 --test_nodes 3000 --phi_train $p --phi_test -$p --name csbm_lh_$phi
