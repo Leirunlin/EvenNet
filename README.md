@@ -45,6 +45,9 @@ For example, to run expeiermnts on real-world datasets, try:
 
 ## Attribution
 [GPRGNN](https://github.com/jianhao2016/GPRGNN)
+
 [LINKX](https://github.com/CUAI/Non-Homophily-Large-Scale)
+
 [DeepRobust](https://github.com/DSE-MSU/DeepRobust)
+
 [GIA-HAO](https://github.com/LFhase/GIA-HAO)
