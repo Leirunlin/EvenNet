@@ -8,3 +8,4 @@ python gnn_misg.py --dataset $dataset  --inductive --eval_robo --model 'evennet'
 done
 done
 done
+
