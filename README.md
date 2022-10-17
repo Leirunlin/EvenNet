@@ -2,12 +2,20 @@
 This is the official repository of NIPS 2022 paper *EvenNet: Ignoring Odd-Hop Neighbors Improves Robustness of Graph Neural Networks*.
 
 ## Setup
-The implementation is based on python 3.
-You can simply run
+The implementation is based on python 3, and
+* deeprobust==0.2.4
+* dgl==0.6.0
+* numpy==1.18.1
+* ogb==1.3.3
+* torch==1.8.1
+* torch_geometric==1.6.3
 
-`pip install -r requirements.txt`
+You can simply run
+`pip install -r requirements.txt`.
 
 ## Repository structure
+We provide cSBM datasets, real-world datasets and pertubed graphs.
+Ogbn-arxiv is not provided, you can download it via [ogb official](https://ogb.stanford.edu/docs/nodeprop/)
 ```
 |-- src
   |--attack.py          # Attack methods
@@ -32,14 +40,15 @@ You can simply run
   |--exp_random.sh      # EvenNet against random attacks
   
 |-- atk-data            # Dataset used for graph attacks
-|-- data                # Dataset on clean datasets (ogbn-arxiv is not provided)
+|-- data                # Dataset on clean datasets
 |-- logs                # Empty repo for logs
 |-- GIA-HAO             # Experiments against graph injection attacks
 ```
 
 ## Run pipeline
-1. cd the src/ directory
-2. Running corresponding scripts
+1. Create empty directory ./logs/
+2. cd the ./src/ directory
+3. Running corresponding scripts
 For example, to run expeiermnts on real-world datasets, try:
 `sh exp_common.sh`
 
@@ -51,3 +60,13 @@ For example, to run expeiermnts on real-world datasets, try:
 [DeepRobust](https://github.com/DSE-MSU/DeepRobust)
 
 [GIA-HAO](https://github.com/LFhase/GIA-HAO)
+
+## Citation
+```
+@inproceedings{Lei2022evennet,
+  title={EvenNet: Ignoring Odd-Hop Neighbors Improves Robustness of Graph Neural Networks},
+  author={Lei, Runlin and Wang, Zhen and Li, Yaliang and Ding, Bolin and Wei, Zhewei},
+  booktitle={NeurIPS},
+  year={2022}
+}
+```
