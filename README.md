@@ -13,9 +13,11 @@ The implementation is based on python 3, and
 You can simply run
 `pip install -r requirements.txt`.
 
-## Repository structure
-We provide cSBM datasets, real-world datasets and pertubed graphs.
+## Dataset
+We provide generated cSBM datasets, real-world datasets in "./data", and pertubed graphs in "./atk_data/atk_adj/".
 Ogbn-arxiv is not provided, you can download it via [ogb official](https://ogb.stanford.edu/docs/nodeprop/)
+
+## Repository structure
 ```
 |-- src
   |--attack.py          # Attack methods
@@ -46,11 +48,16 @@ Ogbn-arxiv is not provided, you can download it via [ogb official](https://ogb.s
 ```
 
 ## Run pipeline
-1. Create empty directory ./logs/
+1. Create empty directory ./logs/ (To save the experiment results.)
 2. cd the ./src/ directory
 3. Running corresponding scripts
-For example, to run expeiermnts on real-world datasets, try:
-`sh exp_common.sh`
+For example, to run experiments on real-world datasets, try:
+
+   `sh exp_common.sh` 
+
+   To run experiments against Metattack / MinMax attack, try:
+  
+  `sh exp_matk.sh`
 
 ## Attribution
 [GPRGNN](https://github.com/jianhao2016/GPRGNN)
