@@ -56,8 +56,8 @@ For example, to run experiments on real-world datasets, try:
    `sh exp_common.sh` 
 
    To run experiments against Metattack / MinMax attack, try:
-  
-  `sh exp_matk.sh`
+    
+    `sh exp_matk.sh`
 
 ## Attribution
 [GPRGNN](https://github.com/jianhao2016/GPRGNN)
